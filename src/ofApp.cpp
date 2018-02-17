@@ -13,9 +13,9 @@ void ofApp::setup(){
 
 	ofBackground(30, 30, 130);
 
-    hitSound.load("Samples/hit.wav");
-    missSound.load("Samples/miss.wav");
-
+    hitSound.load("Samples/hit2.wav");
+    missSound.load("Samples/miss2.wav");
+    roundWonSound.load("Samples/roundWon.wav");
 }
 
 //--------------------------------------------------------------
@@ -91,7 +91,10 @@ void ofApp::checkOscMessages()
             if(hitMiss) hitSound.play();
             else missSound.play();
         }
-        else if (true){
+        else if (m.getAddress() == "/lightduel/roundwon"){
+            float pan = m.getArgAsInt32(0);
+            roundWonSound.setPan(pan);
+            roundWonSound.play();
 
         }
 

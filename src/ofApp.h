@@ -42,4 +42,5 @@ class ofApp : public ofBaseApp {
 
         ofSoundPlayer hitSound;
         ofSoundPlayer missSound;
+        ofSoundPlayer roundWonSound;
 };
